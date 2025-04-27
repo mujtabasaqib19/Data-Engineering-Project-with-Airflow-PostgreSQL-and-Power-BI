@@ -1,15 +1,27 @@
-🚀 Project Overview
-Built an Airflow pipeline to automate:
-Extraction and transformation of sales, product, and customer data.
-Creation of fact and dimension tables.
-Loaded the cleaned data into PostgreSQL database.
-Connected Power BI to the PostgreSQL database to create interactive dashboards.
-Visualized key business metrics such as Sales by Country, Top Selling Products, and Customer Distribution.
+Here’s a **professional GitHub README** you can use for this project:
 
-🛠 Project Structure
-bash
-Copy
-Edit
+---
+
+# 📊 Data Engineering Project with Airflow, PostgreSQL, and Power BI
+
+This project demonstrates a complete **ETL (Extract, Transform, Load)** pipeline using **Apache Airflow**, **PostgreSQL**, and **Power BI** for dashboard creation and visualization.
+
+---
+
+## 🚀 Project Overview
+
+- Built an **Airflow pipeline** to automate:
+  - Extraction and transformation of **sales**, **product**, and **customer** data.
+  - Creation of **fact** and **dimension** tables.
+- Loaded the cleaned data into **PostgreSQL** database.
+- Connected **Power BI** to the PostgreSQL database to create interactive dashboards.
+- Visualized key business metrics such as **Sales by Country**, **Top Selling Products**, and **Customer Distribution**.
+
+---
+
+## 🛠 Project Structure
+
+```bash
 .
 ├── dags/
 │   ├── dim_customers.py         # DAG for loading dim_customer
@@ -27,104 +39,91 @@ Edit
 ├── .env                          # Environment variables
 ├── data.dump.ipynb               # Optional data processing notebook
 ├── docker-compose.yml            # Docker configuration for services
-⚙️ Technologies Used
-Airflow for workflow orchestration
+```
 
-PostgreSQL for database storage
+---
 
-Docker Compose for containerized setup
+## ⚙️ Technologies Used
 
-Power BI for reporting and visualization
+- **Airflow** for workflow orchestration
+- **PostgreSQL** for database storage
+- **Docker Compose** for containerized setup
+- **Power BI** for reporting and visualization
 
-🔥 Key Features
-Three automated DAGs:
+---
 
-dim_customer → Builds customer dimension.
+## 🔥 Key Features
 
-dim_product → Builds product dimension.
+- **Three automated DAGs**:
+  - `dim_customer` → Builds customer dimension.
+  - `dim_product` → Builds product dimension.
+  - `fact_sales` → Builds sales fact table.
+- **Scheduled Daily (@daily)** with retry mechanisms.
+- **Dynamic connections** via `.env` files (Airflow reads environment variables).
+- **Data validation** before inserting into target tables.
+- **Dashboard Examples**:
+  - Sales by Country
+  - Sales by Product Line
+  - Top 10 Customers by Revenue
+  - Top 10 Products by Revenue
+  - Order Status Funnel
 
-fact_sales → Builds sales fact table.
+---
 
-Scheduled Daily (@daily) with retry mechanisms.
+## 🐳 How to Run
 
-Dynamic connections via .env files (Airflow reads environment variables).
+1. Clone this repository:
 
-Data validation before inserting into target tables.
-
-Dashboard Examples:
-
-Sales by Country
-
-Sales by Product Line
-
-Top 10 Customers by Revenue
-
-Top 10 Products by Revenue
-
-Order Status Funnel
-
-🐳 How to Run
-Clone this repository:
-
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-Start the services via Docker:
+```
 
-bash
-Copy
-Edit
+2. Start the services via Docker:
+
+```bash
 docker-compose up --build
-Access services:
+```
 
-Airflow UI: http://localhost:8081
+3. Access services:
+   - Airflow UI: `http://localhost:8081`
+   - PGAdmin (optional): `http://localhost:5050`
+   - PostgreSQL Database Host: `localhost:5432`
 
-PGAdmin (optional): http://localhost:5050
+4. Create an Airflow Admin User:
 
-PostgreSQL Database Host: localhost:5432
-
-Create an Airflow Admin User:
-
-bash
-Copy
-Edit
+```bash
 docker exec -it airflow-webserver airflow users create \
   --username admin --password admin \
   --firstname Admin --lastname User \
   --role Admin --email admin@example.com
-Trigger the DAGs manually or let them run on schedule.
+```
 
-📈 Power BI Dashboards
+5. Trigger the DAGs manually or let them run on schedule.
+
+---
+
+## 📈 Power BI Dashboards
+
 You can connect Power BI to PostgreSQL:
+- Host: `localhost`
+- Port: `5432`
+- Username: `postgres`
+- Password: `example`
+- Database: `postgres`
 
-Host: localhost
+**Dashboards Created:**
+- Top 10 Products by Sales
+- Sales Breakdown by Country
+- Sales Amount vs Quantity per Product Line
+- Customer Purchase Distribution
+- Order Status Funnel (Order Placed → Shipped → Delivered)
 
-Port: 5432
+---
 
-Username: postgres
+## 📋 Commands Used During Setup
 
-Password: example
-
-Database: postgres
-
-Dashboards Created:
-
-Top 10 Products by Sales
-
-Sales Breakdown by Country
-
-Sales Amount vs Quantity per Product Line
-
-Customer Purchase Distribution
-
-Order Status Funnel (Order Placed → Shipped → Delivered)
-
-📋 Commands Used During Setup
-bash
-Copy
-Edit
+```bash
 # Navigate into the project
 cd project-folder
 
@@ -136,3 +135,28 @@ airflow users create --username admin --password admin --firstname Admin --lastn
 
 # Trigger Airflow DAGs
 Trigger manually via Airflow UI.
+```
+
+---
+
+## 📢 Future Improvements
+
+- Add dbt (data build tool) for better transformations
+- Setup email notifications for DAG failure alerts
+- Deploy dashboards on Power BI Cloud Service
+- Automate incremental loads instead of full refreshes
+
+---
+
+## 🤝 Acknowledgements
+
+- [Apache Airflow](https://airflow.apache.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Power BI](https://powerbi.microsoft.com/)
+- [Docker](https://www.docker.com/)
+
+---
+
+Would you also like me to prepare a **badge section** for GitHub (e.g., Docker | Airflow | Power BI badges)? 🚀  
+Would look even more professional!  
+Want me to add it? 🚀🎯
