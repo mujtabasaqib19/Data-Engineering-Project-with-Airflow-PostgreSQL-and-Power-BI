@@ -71,8 +71,8 @@ This project demonstrates a complete **ETL (Extract, Transform, Load)** pipeline
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/mujtabasaqib19/mujtabasaqib19.git
+cd mujtabasaqib19
 ```
 
 2. Start the services via Docker:
@@ -89,14 +89,10 @@ docker-compose up --build
 4. Create an Airflow Admin User:
 
 ```bash
-docker exec -it airflow-webserver airflow users create \
-  --username admin --password admin \
-  --firstname Admin --lastname User \
-  --role Admin --email admin@example.com
+docker-compose run airflow-webserver airflow users create -u muji -p 1234 -f Muji -l Admin -r Admin -e muji@example.com
 ```
 
 5. Trigger the DAGs manually or let them run on schedule.
-
 ---
 
 ## 📈 Power BI Dashboards
@@ -152,7 +148,3 @@ Trigger manually via Airflow UI.
 - [Docker](https://www.docker.com/)
 
 ---
-
-Would you also like me to prepare a **badge section** for GitHub (e.g., Docker | Airflow | Power BI badges)? 🚀  
-Would look even more professional!  
-Want me to add it? 🚀🎯
