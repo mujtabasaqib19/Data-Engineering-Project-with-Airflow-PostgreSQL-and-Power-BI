@@ -1,7 +1,3 @@
-Here’s a **professional GitHub README** you can use for this project:
-
----
-
 # 📊 Data Engineering Project with Airflow, PostgreSQL, and Power BI
 
 This project demonstrates a complete **ETL (Extract, Transform, Load)** pipeline using **Apache Airflow**, **PostgreSQL**, and **Power BI** for dashboard creation and visualization.
