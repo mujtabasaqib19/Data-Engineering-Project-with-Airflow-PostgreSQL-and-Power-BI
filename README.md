@@ -14,6 +14,12 @@ This project demonstrates a complete **ETL (Extract, Transform, Load)** pipeline
 - Visualized key business metrics such as **Sales by Country**, **Top Selling Products**, and **Customer Distribution**.
 
 ---
+📋 Problem Statement and Approach
+The goal was to automate the loading of raw CSV data into a PostgreSQL database (bronze layer), transform it into fact and dimension tables (silver/gold layers) using Airflow DAGs, and create dynamic dashboards showing key sales metrics in Power BI.
+
+I containerized PostgreSQL, Airflow, pgAdmin, and other services using Docker Compose. DAGs were created to automate table creation and loading. Then, Power BI connected directly to PostgreSQL to visualize important KPIs like Top Products, Sales by Country, and Customer Contributions.
+
+---
 
 ## 🛠 Project Structure
 
